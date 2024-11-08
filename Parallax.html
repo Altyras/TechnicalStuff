@@ -72,7 +72,7 @@
         .youtube-link:hover .hover-column:nth-child(9) { animation-delay: 3.2s; }
         .youtube-link:hover .hover-column:nth-child(10) { animation-delay: 3.6s; }
         .youtube-link:hover .hover-column:nth-child(11) { animation-delay: 4.0s; }
-        .hover-column,.hover-column2, .hover-column3,.hover-column4,.hover-colum5,.hover-column6,.hover-column7,.hover-column8,.hover-column9,.hover-column10{position:absolute;top:0;left:-100%;width:100%;height:30%;background-color: rgb(36, 0, 0);mix-blend-mode:difference; pointer-events: none;}
+        .hover-column,.hover-column2, .hover-column3,.hover-column4,.hover-colum5,.hover-column6,.hover-column7,.hover-column8,.hover-column9,.hover-column10{position:absolute;top:30px;left:-100%;width:100%;height:30%;background-color: rgb(36, 0, 0);mix-blend-mode:difference; pointer-events: none;}
         @keyframes moveColumn {
             0% { left: -110%; rotate: -35deg;}
             25% { left: 110%; rotate: -35deg;}
@@ -83,7 +83,7 @@
             100% {left: 110%;rotate: 35deg;}
         }
         .github-link {background-color: #181717;transition: letter-spacing 8s ease-in-out;}
-        .github-link:hover ~ a, .github-link:hover + a, .github-link:hover ~ span{
+        .github-link:hover{
             filter: brightness(0);
             transition: filter 0.5s ease;
         }
@@ -95,7 +95,14 @@
             color: #000000;
             filter: none;
         }
+        /* Dropdown content (hidden initially) */
+        .dropdown-content {display: none; background-color: #222; padding-top: 0px;}
         
+        .dropdown-active {HEIGHT: auto; display: block; animation: slideDown 0.5s ease-out forwards; }
+        @keyframes slideDown {
+            from { transform: translateY(-50%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -104,10 +111,36 @@
     </div>
     <div class="parallax"></div>
     <div class="button-container">
-        <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
-        <a href="https://www.youtube.com" class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
-        <a href="https://www.youtube.com" class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <a class="youtube-link" onclick="toggleDropdown('dp1')"><span>CSS Tutorial</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp1">
+            <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        </div>
+        <a class="youtube-link" onclick="toggleDropdown('dp2')"><span>CSS Advanced</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp2">
+            <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        </div>
+        <a class="youtube-link" onclick="toggleDropdown('dp3')"><span>CSS Responsive</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp3">
+            <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        </div>
     </div>
 </body>
+<script>
+    function toggleDropdown(dropdownID) {
+        var dropdown = document.getElementById(dropdownID);
+        dropdown.classList.toggle("dropdown-active");
+    }
+    document.addEventListener("click", function(event) {
+        var dropdown = document.getElementById(dropdownID);
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.toggle("dropdown-active");
+        }
+    });
+</script>
 </html>
 #adding slidedowns
