@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>MyHtml</title>
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+        width: 0px;
+        }
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #000000; 
+        }
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #3a3a3a; 
+        }
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #454545; 
+        }
+        body {background-color: #000000;overflow-x: hidden;font-family: Helvetica, sans-serif;position: relative;line-height: 1.6;margin: 0;padding: 0;margin-bottom: 0;}
+        body::after {content: "";position: absolute;bottom: 0;left: 0;width: 100%;height: 40%;}
+        p {padding: 15px;color: #ffffff;text-align: center;}
+        .button-container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .button-container a {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            width: 100%;
+            color: white;
+            padding: 50px;
+            font-family: 'Helvetica', sans-serif;
+            font-weight: bold;
+            font-size: 3rem;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            box-sizing: border-box;
+            letter-spacing: -0.002em;
+            transition: filter 0.5s ease, transform 1s, background-color 0.35s ease, letter-spacing 0.2s ease; filter: 0.5s ease;
+        }
+        .container{width:100%; overflow-x: visible;position: relative;}
+        .parallax {
+            background-image: url("https://cdn.prod.website-files.com/642a718fc0eb3b44d660c68e/64a38044ec74b78e83231024_HTML.jpeg");
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .youtube-link {background-color: #7a0000;z-index: 1;overflow: hidden;position: relative;}
+        .youtube-link:hover {background-color: #FF0000;z-index: 1;
+            letter-spacing: 0.7em;
+            transition: background-color 3s ease, letter-spacing 0.3s ease;
+        }
+        .youtube-link:hover .hover-column {
+            animation: moveColumn 9s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+        }
+        .youtube-link:hover .hover-column:nth-child(1) { animation-delay: 0s; }
+        .youtube-link:hover .hover-column:nth-child(2) { animation-delay: 0.4s; }
+        .youtube-link:hover .hover-column:nth-child(3) { animation-delay: 0.8s; }
+        .youtube-link:hover .hover-column:nth-child(4) { animation-delay: 1.2s; }
+        .youtube-link:hover .hover-column:nth-child(5) { animation-delay: 1.6s; }
+        .youtube-link:hover .hover-column:nth-child(6) { animation-delay: 2.0s; }
+        .youtube-link:hover .hover-column:nth-child(7) { animation-delay: 2.4s; }
+        .youtube-link:hover .hover-column:nth-child(8) { animation-delay: 2.8s; }
+        .youtube-link:hover .hover-column:nth-child(9) { animation-delay: 3.2s; }
+        .youtube-link:hover .hover-column:nth-child(10) { animation-delay: 3.6s; }
+        .youtube-link:hover .hover-column:nth-child(11) { animation-delay: 4.0s; }
+        .hover-column,.hover-column2, .hover-column3,.hover-column4,.hover-colum5,.hover-column6,.hover-column7,.hover-column8,.hover-column9,.hover-column10{position:absolute;top:0;left:-100%;width:100%;height:30%;background-color: rgb(36, 0, 0);mix-blend-mode:difference; pointer-events: none;}
+        @keyframes moveColumn {
+            0% { left: -110%; rotate: -35deg;}
+            25% { left: 110%; rotate: -35deg;}
+            50% { left: 110%; rotate: 35deg;}
+            65% {left: -110%; rotate: 35deg;}
+            66% {left: -110%; rotate: -35deg;}
+            90% {left: 110%;rotate: -35deg;}
+            100% {left: 110%;rotate: 35deg;}
+        }
+        .github-link {background-color: #181717;transition: letter-spacing 8s ease-in-out;}
+        .github-link:hover ~ a, .github-link:hover + a, .github-link:hover ~ span{
+            filter: brightness(0);
+            transition: filter 0.5s ease;
+        }
+        
+        .github-link:hover {background-color: #d4d4d4;
+            letter-spacing: 1em;
+            transform: scale(1.1);
+            transition: transform 10s, background-color 1s ease,color 7.5s ease, letter-spacing 8s ease-in-out;
+            color: #000000;
+            filter: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a class="github-link">CSS Tutorial</a>
+    </div>
+    <div class="parallax"></div>
+    <div class="button-container">
+        <a href="https://www.youtube.com" class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <a href="https://www.youtube.com" class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <a href="https://www.youtube.com" class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+    </div>
+</body>
+</html>
