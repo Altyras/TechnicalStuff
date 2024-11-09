@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+    <style>
+        body {margin:0;background:rgb(128, 236, 255);}
+        .header {height:80px}
+        .menu {height:50px;background:gold;}
+        .content{height: 450px;background:#fff;}
+        #browser{width:55%;height:450px;float:right;border:1px solid seagreen;}
+        #editor{width:40%;height:450px;resize:none;float: left;border: 1px solid green;}
+        .menu input [type="button"]{margin:5px 0 0 200px;width: 120px; height: 40px;}
+    </style>
+    <script type="text/javascript">
+        function myTry()
+        {
+            var code = document.getElementById("editor").value;
+            document.getElementById("browser").innerHTML = code;
+        }
+    </script>
+</head>
+<body bgcolor="white">
+    <div class="main">
+        <div class="header"></div>
+        <div class="menu">
+            <input type="button" value="Run" onclick="myTry()"/>
+        </div>
+        <div class="content">
+            <div id="browser"></div>
+            <textarea id="editor"></textarea>
+    </div>
+
+</body>
+</html>
