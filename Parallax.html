@@ -125,12 +125,12 @@
         <!--Chapter 1-->
         <a class="youtube-link" onclick="toggleDropdown('dp1')"><span>Introduction to HTML</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
         <div class="dropdown-content" id="dp1">
-            <a class="github-link"><span>Your First Web Page</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
-            <a class="github-link"><span>Heading</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link" onclick="embed('YourFirstHtml.html')"><span>Your First Web Page</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link" onclick="embed('Header.html')"><span>Heading</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
             <a class="youtube-link" style="background-color:#ffffff; color:#000000" onclick="toggleDropdown('d')"><span>F.U.</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
             <div class="dropdown-content" id="d">
-                <a class="github-link" style="background-color:#3a3a3a;"><span>Future University 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
-                <a class="github-link" style="background-color:#3a3a3a;"><span>Future University 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <a class="github-link" style="background-color:#3a3a3a;" onclick="embed('FutureUniversity1.html')"><span>Future University 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <a class="github-link" style="background-color:#3a3a3a;" onclick="embed('FutureUniversity2.html')"><span>Future University 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
             </div>
             <a class="github-link"><span>Paragraph</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
             <a class="github-link"><span>HR</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
@@ -226,7 +226,7 @@
         </div>
     </div>
     <div>
-        <iframe src="My.html"  width="1000" height="100%"></iframe>
+        <iframe id="iframe" src="My.html" width="1000" height="100%"></iframe>
         <!--<iframe allow-same-origin src="//google.com/search?igu=1" width="1000" height="100%"></iframe>-->
     </div>
 </div>
@@ -239,6 +239,14 @@
     document.addEventListener("click", function(event) {
         var dropdown = document.getElementById(dropdownID);
     });
+    function embed(filename) {
+  // Get the iframe by its ID
+  var iframe = document.getElementById('iframe');
+  
+  // Change the src attribute to load the new HTML file
+  iframe.src = filename;
+}
+
 </script>
 </html>
 #adding slidedowns
