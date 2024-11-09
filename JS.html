@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        h2 {
+            margin-top: 20px;
+            font-size: 2em;
+        }
+        h3 {
+            margin-top: 15px;
+            font-size: 1.5em;
+        }
+        p, ul, pre {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 1em;
+        }
+        ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 1em;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .example-box {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Learn JavaScript Basics</h1>
+</header>
+
+<div class="container">
+
+    <h2>JavaScript Switch Statement</h2>
+    <p>The switch statement is used to perform different actions based on different conditions.</p>
+
+    <h3>Syntax:</h3>
+    <pre>
+switch(expression) {
+    case x:
+        // code block
+        break;
+    case y:
+        // code block
+        break;
+    default:
+        // code block
+}
+    </pre>
+    <p>This is how it works:</p>
+    <ul>
+        <li>The switch expression is evaluated once.</li>
+        <li>The value of the expression is compared with the values of each case.</li>
+        <li>If there is a match, the associated block of code is executed.</li>
+    </ul>
+
+    <h3>Example:</h3>
+    <div class="example-box">
+        <label for="text_a">Input month (1-12):</label>
+        <input id="text_a" type="text;" />
+        <p id="answer"></p>
+        <button onclick="myFunction()">Check</button>
+    </div>
+
+    <script>
+    function myFunction() {
+        var mon = document.getElementById("text_a").value;
+        month = parseInt(mon);
+        switch (month) {
+            case 3:
+            case 4:
+            case 5:
+                document.getElementById("answer").innerHTML = "It is summer season";
+                break;
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+                document.getElementById("answer").innerHTML = "It is rainy season";
+                break;
+            case 1:
+            case 2:
+            case 11:
+            case 12:
+                document.getElementById("answer").innerHTML = "It is cold season";
+                break;
+            default:
+                document.getElementById("answer").innerHTML = "Month out of range";
+        }
+    }
+    </script>
+
+    <h3>The break Keyword</h3>
+    <p>When JavaScript reaches a break keyword, it breaks out of the switch block. This will stop the execution inside the block. It is not necessary to break the last case in a switch block, as the block breaks (ends) there anyway.</p>
+    <p>Note: If you omit the break statement, the next case will be executed even if the evaluation does not match the case.</p>
+
+    <h3>The default Keyword</h3>
+    <p>The default keyword specifies the code to run if there is no case match.</p>
+
+    <h3>Common Code Blocks:</h3>
+    <p>Sometimes you will want different switch cases to use the same code. For example:</p>
+    <pre>
+switch (new Date().getDay()) {
+    case 4:
+    case 5:
+        text = "Soon it is Weekend";
+        break;
+    case 0:
+    case 6:
+        text = "It is Weekend";
+        break;
+    default:
+        text = "Looking forward to the Weekend";
+}
+    </pre>
+
+    <h3>Switching Details:</h3>
+    <ul>
+        <li>If multiple cases match a case value, the first case is selected.</li>
+        <li>If no matching cases are found, the program continues to the default label.</li>
+        <li>If no default label is found, the program continues to the statement(s) after the switch.</li>
+        <li>Switch cases use strict comparison (===). The values must be of the same type to match.</li>
+    </ul>
+
+    <h2>JavaScript For Loop</h2>
+    <p>A loop is a sequence of instructions that is continually repeated until a certain condition is reached.</p>
+
+    <h3>Example 1:</h3>
+    <pre>
+var fruits = ["Mango", "Banana", "Pineapple", "Coconut", "Durian", "Avocado"];
+var text = "";
+var i;
+for (i = 0; i < fruits.length; i++) {
+    text += fruits[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+    </pre>
+
+    <h3>Different Kinds of Loops:</h3>
+    <ul>
+        <li>for - loops through a block of code a number of times</li>
+        <li>for/in - loops through the properties of an object</li>
+        <li>for/of - loops through the values of an iterable object</li>
+        <li>while - loops through a block of code while a specified condition is true</li>
+        <li>do/while - also loops through a block of code while a specified condition is true</li>
+    </ul>
+
+    <h3>For Loop Syntax:</h3>
+    <pre>
+for (statement 1; statement 2; statement 3) {
+    // code block to be executed
+}
+    </pre>
+
+    <h3>Example 2:</h3>
+    <pre>
+var text = "";
+var i;
+for (i = 0; i < 5; i++) {
+    text += "Value of i is " + i + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+    </pre>
+
+    <h3>For/Of Loop:</h3>
+    <p>The JavaScript for/of statement loops through the values of an iterable object such as Arrays, Strings, Maps, and NodeLists.</p>
+
+    <h3>Looping over an Array:</h3>
+    <pre>
+var fruits = ['Mango', 'Pineapple', 'Apple'];
+for (x of fruits) {
+    document.write(x + "<br>");
+}
+    </pre>
+
+    <h3>Looping over a String:</h3>
+    <pre>
+var name = 'University';
+for (x of name) {
+    document.write(x + "<br>");
+}
+    </pre>
+
+    <h2>JavaScript While Loop</h2>
+    <p>The while loop loops through a block of code as long as a specified condition is true.</p>
+    <pre>
+while (condition) {
+    // code block to be executed
+}
+    </pre>
+
+    <h3>Example 3:</h3>
+    <pre>
+var text = "";
+var x = 0;
+while (x < 10) {
+    text += "<br>The value of x is " + x;
+    x++;
+}
+document.getElementById("demo").innerHTML = text;
+    </pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        ul {
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        th, td {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            background-color: #fff;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        pre {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 40px;
+        }
+
+        .content-box {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-box p {
+            margin: 10px 0;
+        }
+
+        .content-box ul {
+            padding-left: 20px;
+        }
+
+        .content-box ul li {
+            list-style-type: disc;
+        }
+
+        .table-note {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .table-note code {
+            font-size: 1.1em;
+        }
+
+        .table-description {
+            font-size: 1.1em;
+            color: #34495e;
+            font-weight: bold;
+        }
+
+        .table-header {
+            font-size: 1.1em;
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        <p class="section-title">I. Table Basics</p>
+        <p>HTML contains five distinct table tags, each with its own set of attributes:</p>
+        <ul>
+            <li><strong>The Table Tags:</strong> The <code>&lt;TABLE&gt;…&lt;/TABLE&gt;</code> tags form a container for an HTML table. The <code>&lt;TABLE&gt;</code> tag contains several optional attributes that change the table’s background color, alignment, border, cell padding and spacing, and width.</li>
+            <li><strong>The Caption Tags:</strong> The <code>&lt;CAPTION&gt;…&lt;/CAPTION&gt;</code> tags form a container for the table’s caption. The caption is optional. If one is present, HTML by default centers it and places it at the top of the table. The <code>ALIGN</code> attribute changes the caption’s alignment. Values include "TOP" (default), "BOTTOM", "LEFT", and "RIGHT".</li>
+            <li><strong>The Row Tags:</strong> The <code>&lt;TR&gt;…&lt;/TR&gt;</code> tags create the rows of the table. The rows contain either headings or data.</li>
+            <li><strong>The Table Heading Tags:</strong> The <code>&lt;TH&gt;…&lt;/TH&gt;</code> tags create heading cells. Headings are centered and written in a bold font.</li>
+            <li><strong>The Table Data Tags:</strong> The <code>&lt;TD&gt;…&lt;/TD&gt;</code> tags create data cells. Table data are left-aligned and written in a plain font.</li>
+        </ul>
+    </div>
+
+    <div class="content-box">
+        <p class="table-description">The Color Table PAGE</p>
+        <pre>
+<!DOCTYPE html>
+<html>
+<head><title>Recycling</title></head>
+<body bgcolor="white">
+  <table cellpadding="5">
+    <caption><b>Muskrat Mounds Recycling Program</b></caption>
+    <tr align="left">
+      <th>Suitable</th>
+      <th>Not Suitable</th>
+    </tr>
+    <tr>
+      <td>
+        <font size="2">
+          <pre>
+            <tt>
+              <b>
+                Adding Machine Tapes
+                Business Cards
+                Colored Paper
+                Computer Printout
+                Construction Paper
+                Fax Paper
+                Index Cards
+                Paper Plates
+              </b>
+            </tt>
+          </pre>
+        </font>
+      </td>
+      <td valign="top">
+        <font size="2">
+          <pre>
+            <tt>
+              <b>
+                Blueprints
+                Brown Envelopes
+                Candy Wrappers
+                Carbon Paper
+                Facial Tissue
+              </b>
+            </tt>
+          </pre>
+        </font>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+        </pre>
+    </div>
+
+    <div class="content-box">
+        <p class="table-description">The Literary Characters PAGE</p>
+        <pre>
+<!DOCTYPE html>
+<html>
+<head><title>Vertical Alignment</title></head>
+<body bgcolor="white" cellpadding="5">
+  <table border="1">
+    <tr valign="baseline">
+      <th><h1>BASELINE</h1></th>
+      <td>Red</td>
+      <td>Blue</td>
+      <td>Yellow</td>
+    </tr>
+    <tr>
+      <th><h1>MIDDLE (Default)</h1></th>
+      <td>Orange</td>
+      <td>Purple</td>
+      <td>Green</td>
+    </tr>
+    <tr valign="top">
+      <th><h1>TOP</h1></th>
+      <td>Cyan</td>
+      <td>Chartreuse</td>
+      <td>Mauve</td>
+    </tr>
+    <tr valign="bottom">
+      <th><h1>BOTTOM</h1></th>
+      <td>Red</td>
+      <td>Fuschia</td>
+      <td>Pine</td>
+    </tr>
+  </table>
+</body>
+</html>
+        </pre>
+    </div>
+
+    <div class="content-box">
+        <p class="table-description">PADDING, SPACING AND BORDERS</p>
+        <p>The <code>&lt;TABLE&gt;</code> tag contains three attributes that control the overall appearance of a table: <strong>BORDER</strong>, <strong>CELLSPACING</strong>, and <strong>CELLPADDING</strong>.</p>
+        <p>Each of these attributes uses a pixel value. That is, we specify the number of pixels we want for the border, cell spacing, or cell padding.</p>
+        <p class="table-note">The <code>&lt;TABLE&gt;</code> tag contains three attributes that control the overall appearance of a table: <strong>BORDER</strong>, <strong>CELLSPACING</strong>, and <strong>CELLPADDING</strong>.</p>
+        <pre>
+<!DOCTYPE html>
+<html>
+<head><title>Football's Special Teams</title></head>
+<body bgcolor="white">
+  <table border="1" cellpadding="5">
+    <caption>Football</caption>
+    <tr>
+      <th rowspan="4"><h1>SPECIAL TEAMS</h1></th>
+      <td>Kick Off</td>
+    </tr>
+    <tr>
+      <td>Field Goal</td>
+    </tr>
+    <tr>
+      <td>Extra Point</td>
+    </tr>
+    <tr>
+      <td>Punt</td>
+    </tr>
+  </table>
+</body>
+</html>
+        </pre>
+    </div>
+
+    <div class="content-box">
+        <p class="section-title">TABLES EXERCISES</p>
+        <ul>
+            <li>Do tables look better with solid borders?</li>
+            <li>What does the caption tag do?</li>
+            <li>How can you adjust the alignment of text within a table?</li>
+            <li>What is the difference between cellpadding and cellspacing?</li>
+            <li>What HTML tag can make text in a table heading bold?</li>
+        </ul>
+    </div>
+
+</body>
+</html>

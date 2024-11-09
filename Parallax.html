@@ -22,7 +22,7 @@
         body::after {content: "";position: absolute;bottom: 0;left: 0;width: 100%;height: 40%;}
         p {padding: 15px;color: #ffffff;text-align: center;}
         .button-container {
-            width: 100%;
+            width: 50%;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -72,7 +72,7 @@
         .youtube-link:hover .hover-column:nth-child(9) { animation-delay: 3.2s; }
         .youtube-link:hover .hover-column:nth-child(10) { animation-delay: 3.6s; }
         .youtube-link:hover .hover-column:nth-child(11) { animation-delay: 4.0s; }
-        .hover-column,.hover-column2, .hover-column3,.hover-column4,.hover-colum5,.hover-column6,.hover-column7,.hover-column8,.hover-column9,.hover-column10{position:absolute;top:0;left:-100%;width:100%;height:30%;background-color: rgb(36, 0, 0);mix-blend-mode:difference; pointer-events: none;}
+        .hover-column,.hover-column2, .hover-column3,.hover-column4,.hover-colum5,.hover-column6,.hover-column7,.hover-column8,.hover-column9,.hover-column10{position:absolute;top:30px;left:-100%;width:100%;height:30%;background-color: rgb(36, 0, 0);mix-blend-mode:difference; pointer-events: none;}
         @keyframes moveColumn {
             0% { left: -110%; rotate: -35deg;}
             25% { left: 110%; rotate: -35deg;}
@@ -82,31 +82,177 @@
             90% {left: 110%;rotate: -35deg;}
             100% {left: 110%;rotate: 35deg;}
         }
-        .github-link {background-color: #181717;transition: letter-spacing 8s ease-in-out;}
-        .github-link:hover ~ a, .github-link:hover + a, .github-link:hover ~ span{
+        .github-link {z-index: 2; background-color: #000000;transition: letter-spacing 8s ease-in-out;}
+        
+        .github-link:hover {z-index: 2; background-color: #d4d4d4;
             filter: brightness(0);
             transition: filter 0.5s ease;
-        }
-        
-        .github-link:hover {background-color: #d4d4d4;
-            letter-spacing: 1em;
-            transform: scale(1.1);
-            transition: transform 10s, background-color 1s ease,color 7.5s ease, letter-spacing 8s ease-in-out;
+            letter-spacing: 0.618em;
+            transform: scale(1);
+            transition: transform 10s, background-color 1s ease,color 7.5s ease, letter-spacing 4s ease-in-out;
             color: #000000;
             filter: none;
         }
+        .github-link2 {background-color: #009661;transition: letter-spacing 8s ease-in-out;}
         
+        .github-link2:hover {background-color: #d4d4d4;
+            filter: brightness(0);
+            transition: filter 0.5s ease;
+            letter-spacing: 0.618em;
+            transform: scale(1);
+            transition: transform 10s, background-color 1s ease,color 7.5s ease, letter-spacing 4s ease-in-out;
+            color: #009661;
+            filter: none;
+        }
+        /* Dropdown content (hidden initially) */
+        .dropdown-content {display: none; background-color: #1aff00; padding-top: 0px;opacity: 50%;}
+        
+        .dropdown-active {height: auto; display:contents; animation: slideDown 0.5s ease-out forwards; }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
-    <div class="button-container">
-        <a class="github-link">CSS Tutorial</a>
+    <div class="button-container" style="width: 100%;">
+        <a class="github-link2">Definitely not<br>W3 Schools</a>
     </div>
     <div class="parallax"></div>
+    <div style="display:flex;">
     <div class="button-container">
-        <a href="https://www.youtube.com" class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
-        <a href="https://www.youtube.com" class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
-        <a href="https://www.youtube.com" class="youtube-link"><span>YouTube</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <!--Chapter 1-->
+        <a class="youtube-link" onclick="toggleDropdown('dp1')"><span>Introduction to HTML</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp1">
+            <a class="github-link" onclick="embed('YourFirstHtml.html')"><span>Your First Web Page</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link" onclick="embed('Header.html')"><span>Heading</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link" style="background-color:#ffffff; color:#000000" onclick="toggleDropdown('d')"><span>F.U.</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <div class="dropdown-content" id="d">
+                <a class="github-link" style="background-color:#3a3a3a;" onclick="embed('FutureUniversity1.html')"><span>Future University 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <a class="github-link" style="background-color:#3a3a3a;" onclick="embed('FutureUniversity2.html')"><span>Future University 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            </div>
+            <a class="github-link" onclick="embed('Paragraph.html')"><span>Paragraph</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link" onclick="embed('HR.html')"><span>HR</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link" onclick="embed('Horizontal_Rule.html')"><span>Horizontal Rule</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link" style="background-color:#ffffff; color:#000000" onclick="toggleDropdown('d2')"><span>Trees</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <div class="dropdown-content" id="d2">
+                <a class="github-link" onclick="embed('Tree1.html')" style="background-color:#3a3a3a;"><span>Tree 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <a class="github-link" onclick="embed('Tree2.html')" style="background-color:#3a3a3a;"><span>Tree 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            </div>
+            <a class="github-link" onclick="embed('User_Friendly.html')"><span>User Friendly</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link" style="background-color: aquamarine; color:#000000" onclick="toggleDropdown('d3')"><span>Activities</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <div class="dropdown-content" id="d3">
+                <a class="youtube-link" style="background-color: rgb(255, 77, 0); color:#000000" onclick="toggleDropdown('ds1')"><span>Activities 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <div class="dropdown-content" id="ds1">
+                    <a class="github-link" style="background-color:#3a3a3a;"onclick="embed('Activity1c1.html')"><span>Act Align</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link" style="background-color:#3a3a3a;"onclick="embed('Activity1c2.html')"><span>Act Teller Machine</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                </div>
+                <a class="youtube-link" style="background-color: rgb(255, 77, 0); color:#000000" onclick="toggleDropdown('ds2')"><span>Activities 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <div class="dropdown-content" id="ds2">
+                    <a class="github-link" style="background-color:#3a3a3a;"onclick="embed('Activity2c1.html')"><span>Act 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link" style="background-color:#3a3a3a;"onclick="embed('Activity2c2.html')"><span>Act 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link" style="background-color:#3a3a3a;"onclick="embed('Activity2c3.html')"><span>Act 3</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                </div>
+
+            </div>
+        </div>
+        <!--Chapter 2-->
+        <a class="youtube-link" onclick="toggleDropdown('dp2')"><span>Chapter 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp2">
+            <a class="github-link"onclick="embed('PhysicalStyleTag')"><span>Physical Style Tag</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"onclick="embed('PreformattedText')"><span>Preformatted Text</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"onclick="embed('DinnerMenu')"><span>Dinner Menu</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link" style="background-color:#ffffff; color:#000000" onclick="toggleDropdown('e1')"><span>Text and BG Color</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <div class="dropdown-content" id="e1">
+                    <a class="github-link" style="background-color:#3a3a3a;"onclick="embed('FontBG1')"><span>Font and BG color 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link" style="background-color:#3a3a3a;"onclick="embed('FontBG2')"><span>Font and BG color 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                </div>
+            <a class="youtube-link" style="background-color:#ffffff; color:#000000" onclick="toggleDropdown('e2')"><span>Font</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <div class="dropdown-content" id="e2">
+                    <a class="github-link"style="background-color:#3a3a3a;"onclick="embed('FToDefault')"><span>Temp Default/Base Font Style</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link" style="background-color:#3a3a3a;"onclick="embed('FontSize')"><span>Font Size</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link"style="background-color:#3a3a3a;"onclick="embed('FontStyle')"><span>Font Style</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                </div>
+            <a class="github-link"onclick="embed('Bakery')"><span>Bakery Equipment</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"onclick="embed('MarqueeTag')"><span>Marquee Tag</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"onclick="embed('MarqueeBasefont')"><span>Marquee Basefont</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link" style="background-color:#ffffff; color:#000000" onclick="toggleDropdown('e3')"><span>List</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <div class="dropdown-content" id="e3">
+                    <a class="github-link"onclick="embed('List')"style="background-color:#3a3a3a;"><span>What Is List</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link"onclick="embed('Unordered')"style="background-color:#3a3a3a;"><span>Unordered List</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link"onclick="embed('Ordered')"style="background-color:#3a3a3a;"><span>Ordered List</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <a class="github-link"onclick="embed('Nested')"style="background-color:#3a3a3a;"><span>Nested List</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                </div>
+                <a class="github-link"onclick="embed('IntroOnTable')"style="background-color:#000000;"><span>Intro to Table</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <a class="github-link"onclick="embed('Table')"style="background-color:#000000;"><span>Table</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="youtube-link" style="background-color: aquamarine; color:#000000" onclick="toggleDropdown('e4')"><span>Activities</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                <div class="dropdown-content" id="e4">
+                    <a class="youtube-link" style="background-color: rgb(255, 77, 0); color:#000000" onclick="toggleDropdown('g1')"><span>Activities A</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <div class="dropdown-content" id="g1">
+                        <a class="github-link"style="background-color:#3a3a3a;"onclick="embed('Activity3c1')"><span>Activity 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                        <a class="github-link"style="background-color:#3a3a3a;"onclick="embed('Activity3c2')"><span>Activity 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                        <a class="github-link"style="background-color:#3a3a3a;"onclick="embed('Activity3c3')"><span>Activity 3</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    </div>
+                    <a class="youtube-link" style="background-color: rgb(255, 77, 0); color:#000000" onclick="toggleDropdown('g2')"><span>Activities B</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    <div class="dropdown-content" id="g2">
+                        <a class="github-link"style="background-color:#3a3a3a;"onclick="embed('Activity4c1')"><span>Activity 1</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                        <a class="github-link"style="background-color:#3a3a3a;"onclick="embed('Activity4c2')"><span>Activity 2</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+                    </div>
+                </div>
+        </div>
+        <!--Chapter 3-->
+        <a class="youtube-link" onclick="toggleDropdown('dp3')"><span>Javascript Lessons</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp3">
+            <a class="github-link" onclick="embed('JS.html')"><span>Intro to Javascript</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            
+        </div>
+        <a class="youtube-link" onclick="toggleDropdown('dp4')"><span>Filler</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp4">
+            <a class="github-link"><span>Nothing</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"><span>Yep...</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"><span>There's nothing</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        </div>
+        <a class="youtube-link" onclick="toggleDropdown('dp5')"><span>Filler</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp5">
+            <a class="github-link"><span>What? There's nothing</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"><span>Click out!</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"><span>Look there's nothing</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        </div>
+        <a class="youtube-link" onclick="toggleDropdown('dp6')"><span>Filler</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp6">
+            <a class="github-link"><span>It's just a filler</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"><span>Add your content I guess</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"><span>Credit section underneath</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        </div>
+        <a class="youtube-link" onclick="toggleDropdown('dp7')"><span>Creator</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        <div class="dropdown-content" id="dp7">
+            <a class="github-link"><span>Petra</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"><span>Can</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+            <a class="github-link"><span>Endure</span><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div><div class="hover-column"></div></a>
+        </div>
     </div>
+    <div>
+        <iframe id="iframe" src="My.html" width="300%" height="100%"></iframe>
+        <!--<iframe allow-same-origin src="//google.com/search?igu=1" width="1000" height="100%"></iframe>-->
+    </div>
+</div>
 </body>
+<script>
+    function toggleDropdown(dropdownID) {
+        var dropdown = document.getElementById(dropdownID);
+        dropdown.classList.toggle("dropdown-active");
+    }
+    document.addEventListener("click", function(event) {
+        var dropdown = document.getElementById(dropdownID);
+    });
+    function embed(filename) {
+  // Get the iframe by its ID
+  var iframe = document.getElementById('iframe');
+  
+  // Change the src attribute to load the new HTML file
+  iframe.src = filename;
+}
+
+</script>
 </html>
+#adding slidedowns
